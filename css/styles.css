@@ -733,7 +733,23 @@ header .member-actions {
 }
 
 #instagram img {
-    width: 100%
+    width: 100%;
+    height: auto;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out
+}
+
+#instagram .img-cont {
+    padding: 0px;
+}
+
+#instagram .img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    padding: 10px 10px 10px 10px;
 }
 
 #eng-pics img {
@@ -974,48 +990,4 @@ body.modal-open {
 
 .modal-body {
     padding: 25px
-}
-
-.im-container {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    grid-template-rows: 200px 300px;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
-
-.im-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#pic1 {
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-#pic2 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-}
-
-#pic3 {
-    grid-column-start: 3;
-    grid-column-end: 3;
-}
-
-#pic4 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-}
-
-#pic5 {
-    grid-column-start: 3;
-    grid-column-end: 3;
-}
-
-#pic6 {
-    grid-column-start: 3;
-    grid-column-end: 3;
 }
