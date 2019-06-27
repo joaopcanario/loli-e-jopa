@@ -748,7 +748,8 @@ header .member-actions {
 #eng-pics .img-wrap {
     position: relative;
     overflow: hidden;
-    border-radius: 4px
+    border-radius: 4px;
+    padding: 30px;
 }
 
 #eng-pics .img-wrap .overlay {
