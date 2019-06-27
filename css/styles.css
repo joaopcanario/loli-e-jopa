@@ -103,15 +103,11 @@ h5 {
 }
 
 section.intro,
-section.features-extra,
-section.rsvp {
-    background: #fff
-}
-
-section.features,
+section.rsvp,
 section.events,
-section.blog {
-    background: #f8f9fd
+section.eng-pics {
+    background: #fff;
+    /*background: #f8f9fd;*/
 }
 
 .group:after {
@@ -716,15 +712,6 @@ header .member-actions {
     transform: translateX(-50%)
 }
 
-.events .leftcol {
-    padding-right: 100px;
-    border-right: solid 1px #E6E9EA
-}
-
-.events .rightcol {
-    padding-left: 100px
-}
-
 .events .time {
     font-size: 13px;
     font-style: italic;
@@ -944,8 +931,8 @@ header .member-actions {
 }
 
 #rsvp {
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 80px;
+    padding-bottom: 120px;
 }
 
 footer .content {
