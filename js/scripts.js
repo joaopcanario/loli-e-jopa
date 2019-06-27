@@ -154,16 +154,17 @@ $(document).ready(function () {
         var data = $(this).serialize();
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Seus detalhes estão sendo salvos.'));
-        // $.post('https://script.google.com/macros/s/AKfycbzUqz44wOat0DiGjRV1gUnRf4HRqlRARWggjvHKWvqniP7eVDG-/exec', data)
-        //     .done(function (data) {
-        console.log(data);
-        $('#alert-wrapper').html('');
-        $('#rsvp-modal').modal('show');
-            // })
-            // .fail(function (data) {
-            //     console.log(data);
-            //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Parece que houve um problema, tente mais tarde.'));
-            // });
+        // Set url api
+        // $.post('', data)
+        // .done(function (data) {
+        //     console.log(data);
+        //     $('#alert-wrapper').html('');
+        //     $('#rsvp-modal').modal('show');
+        // })
+        // .fail(function (data) {
+        //     console.log(data);
+        //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Parece que houve um problema, tente mais tarde.'));
+        // });
     });
 
 });
