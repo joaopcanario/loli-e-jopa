@@ -735,8 +735,7 @@ header .member-actions {
 #instagram .img-wrap {
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
-    padding: 8px;
+    padding: 0px;
 }
 
 #eng-pics img {
