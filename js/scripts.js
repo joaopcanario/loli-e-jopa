@@ -164,25 +164,6 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    // $('#rsvp-form').on('submit', function (e) {
-    //     e.preventDefault();
-    //     let data = $('#rsvp-form').serialize();
-
-    //     $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Sua resposta esta sendo enviada.'));
-    //     // Set url api
-    //     // $.post('https://lolijopaapi.herokuapp.com/api/v1/rsvp/yes', data)
-    //     // .done(function (data) {
-    //     // console.log(e.target);
-    //     // console.log(data);
-    //     //     $('#alert-wrapper').html('');
-    //     //     $('#rsvp-modal').modal('show');
-    //     // })
-    //     // .fail(function (data) {
-    //     //     console.log(data);
-    //     //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Parece que houve um problema, tente novamente mais tarde.'));
-    //     // });
-    // });
-
     $('#rsvp-yes').click(function (e) {
         e.preventDefault();
         let data = $('#rsvp-form').serialize();
