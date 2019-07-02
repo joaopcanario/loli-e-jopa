@@ -90,16 +90,26 @@ h5 {
     border-color: #d3b56a
 }
 
+.btn-accent-2 {
+    color: #edd68f;
+    background-color: #fff;
+    border-color: #edd68f;
+}
+
 .btn-small {
-    padding: 8px 30px
+    padding: 8px 30px;
 }
 
 .btn-large {
-    padding: 15px 40px
+    padding: 15px 40px;
 }
 
 .btn-margin-right {
-    margin-right: 20px
+    margin-right: 20px;
+}
+
+.btn-group {
+    padding: 15px;
 }
 
 section.intro,

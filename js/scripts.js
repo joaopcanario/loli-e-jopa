@@ -83,11 +83,26 @@ $(document).ready(function () {
 
     });
 
+    /*********************** Ping ************************/
+
+    $(function () {
+        console.log("-> Ping!")
+
+        $.get('https://lolijopaapi.herokuapp.com/api/v1/debug/ping')
+        .done(function (data) {
+            console.log("->", data);
+        })
+        .fail(function (data) {
+            console.log("Ops, algo deu errado!");
+            console.log(data);
+        });
+    });
+
     /***************** Header BG Scroll ******************/
 
     $(function () {
         $(window).scroll(function () {
-            var scroll = $(window).scrollTop();
+            let scroll = $(window).scrollTop();
 
             if (scroll >= 20) {
                 $('section.navigation').addClass('fixed');
@@ -123,7 +138,7 @@ $(document).ready(function () {
         $('a[href*=#]:not([href=#])').click(function () {
             if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 
-                var target = $(this.hash);
+                let target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html,body').animate({
@@ -149,22 +164,61 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
+    // $('#rsvp-form').on('submit', function (e) {
+    //     e.preventDefault();
+    //     let data = $('#rsvp-form').serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Seus detalhes estão sendo salvos.'));
-        // Set url api
-        // $.post('', data)
-        // .done(function (data) {
-        //     console.log(data);
-        //     $('#alert-wrapper').html('');
-        //     $('#rsvp-modal').modal('show');
-        // })
-        // .fail(function (data) {
-        //     console.log(data);
-        //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Parece que houve um problema, tente mais tarde.'));
-        // });
+    //     $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Sua resposta esta sendo enviada.'));
+    //     // Set url api
+    //     // $.post('https://lolijopaapi.herokuapp.com/api/v1/rsvp/yes', data)
+    //     // .done(function (data) {
+    //     // console.log(e.target);
+    //     // console.log(data);
+    //     //     $('#alert-wrapper').html('');
+    //     //     $('#rsvp-modal').modal('show');
+    //     // })
+    //     // .fail(function (data) {
+    //     //     console.log(data);
+    //     //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Parece que houve um problema, tente novamente mais tarde.'));
+    //     // });
+    // });
+
+    $('#rsvp-yes').click(function (e) {
+        e.preventDefault();
+        let data = $('#rsvp-form').serialize();
+
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Sua resposta esta sendo enviada.'));
+
+        console.log(data);
+
+        $.post('https://lolijopaapi.herokuapp.com/api/v1/rsvp/yes', data)
+        .done(function (data) {
+            $('#alert-wrapper').html('');
+            $('#rsvp-modal').modal('show');
+            console.log(data);
+        })
+        .fail(function (data) {
+            console.log(data);
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Houve um problema, tente mais tarde.'));
+        });
+    });
+
+    $('#rsvp-no').click(function (e) {
+        e.preventDefault();
+        let data = $('#rsvp-form').serialize();
+
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Sua resposta esta sendo enviada.'));
+
+        $.post('https://lolijopaapi.herokuapp.com/api/v1/rsvp/no', data)
+        .done(function (data) {
+            $('#alert-wrapper').html('');
+            $('#rsvp-modal').modal('show');
+            console.log(data);
+        })
+        .fail(function (data) {
+            console.log(data);
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Houve um problema, tente mais tarde.'));
+        });
     });
 
 });
@@ -173,14 +227,14 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var itc_kol = {lat: -12.9839709, lng: -38.5117668};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    let itc_kol = {lat: -12.9839709, lng: -38.5117668};
+    let map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: itc_kol,
         scrollwheel: false
     });
 
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
         position: itc_kol,
         map: map
     });
