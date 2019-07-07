@@ -235,7 +235,7 @@ $(document).ready(function () {
         function next_bg() {
             current += 1;
             current = current % backgrounds.length;
-            bg(current);
+            set_bg(current);
         }
 
         setInterval(next_bg, 10000);
