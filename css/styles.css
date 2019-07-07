@@ -420,6 +420,7 @@ section .header {
     -moz-transition: background 700ms ease-in-out;
     -o-transition: background 700ms ease-in-out;
     transition: background 700ms ease-in-out;
+    -webkit-backface-visibility: hidden;
 }
 
 .hero .down-arrow a {

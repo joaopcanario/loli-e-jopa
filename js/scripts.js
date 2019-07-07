@@ -230,6 +230,7 @@ $(document).ready(function () {
             header.css('-moz-transition', "700ms ease-in-out;");
             header.css('-o-transition', "700ms ease-in-out;");
             header.css('transition', "700ms ease-in-out;");
+            header.css('-webkit-backface-visibility', "hidden");
         }
 
         function next_bg() {
