@@ -238,7 +238,7 @@ $(document).ready(function () {
             set_bg(current);
         }
 
-        setInterval(next_bg, 10000);
+        setInterval(next_bg, 5000);
 
         set_bg(0);
     });
