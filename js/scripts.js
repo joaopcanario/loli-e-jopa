@@ -226,10 +226,10 @@ $(document).ready(function () {
             header.css('-o-background-size', "cover");
             header.css('background-size', "cover");
             header.css('position', "relative");
-            header.css('-webkit-transition', "background 700ms ease-in 700ms");
-            header.css('-moz-transition', "background 700ms ease-in 700ms");
-            header.css('-o-transition', "background 700ms ease-in 700ms");
-            header.css('transition', "background 700ms ease-in 700ms");
+            header.css('-webkit-transition', "700ms ease-in-out;");
+            header.css('-moz-transition', "700ms ease-in-out;");
+            header.css('-o-transition', "700ms ease-in-out;");
+            header.css('transition', "700ms ease-in-out;");
         }
 
         function next_bg() {

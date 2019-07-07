@@ -416,10 +416,10 @@ section .header {
     -o-background-size: cover;
     background-size: cover;
     position: relative;
-    -webkit-transition: background 700ms ease-in 700ms;
-    -moz-transition: background 700ms ease-in 700ms;
-    -o-transition: background 700ms ease-in 700ms;
-    transition: background 700ms ease-in 700ms;
+    -webkit-transition: background 700ms ease-in-out;
+    -moz-transition: background 700ms ease-in-out;
+    -o-transition: background 700ms ease-in-out;
+    transition: background 700ms ease-in-out;
 }
 
 .hero .down-arrow a {
