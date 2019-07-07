@@ -202,6 +202,47 @@ $(document).ready(function () {
         });
     });
 
+    /********************** Change Background **********************/
+    $(function () {
+        let header = $(".hero");
+
+        const backgrounds = new Array(
+          'url(img/cover/IMG-01.jpg)',
+          'url(img/cover/IMG-02.jpg)',
+          'url(img/cover/IMG-03.jpg)',
+          'url(img/cover/IMG-04.jpg)',
+          'url(img/cover/IMG-05.jpg)',
+          'url(img/cover/IMG-06.jpg)',
+          'url(img/cover/IMG-07.jpg)'
+        );
+
+        let current = 0;
+
+        function set_bg(position) {
+            header.css('background', ''.concat(backgrounds[position], " center center"));
+            header.css('min-height', "750px");
+            header.css('-webkit-background-size', "cover");
+            header.css('-moz-background-size', "cover");
+            header.css('-o-background-size', "cover");
+            header.css('background-size', "cover");
+            header.css('position', "relative");
+            header.css('-webkit-transition', "background 700ms ease-in 700ms");
+            header.css('-moz-transition', "background 700ms ease-in 700ms");
+            header.css('-o-transition', "background 700ms ease-in 700ms");
+            header.css('transition', "background 700ms ease-in 700ms");
+        }
+
+        function next_bg() {
+            current += 1;
+            current = current % backgrounds.length;
+            bg(current);
+        }
+
+        setInterval(next_bg, 10000);
+
+        set_bg(0);
+    });
+
 });
 
 /********************** Extras **********************/

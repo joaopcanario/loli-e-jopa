@@ -410,13 +410,16 @@ section .header {
 
 .hero {
     min-height: 750px;
-    /*background: url("../img/polygonal-bg.jpg") center center;*/
-    background-color: #37272B;
+    background: url("../img/cover/IMG-01.jpg") center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    position: relative
+    position: relative;
+    -webkit-transition: background 700ms ease-in 700ms;
+    -moz-transition: background 700ms ease-in 700ms;
+    -o-transition: background 700ms ease-in 700ms;
+    transition: background 700ms ease-in 700ms;
 }
 
 .hero .down-arrow a {
