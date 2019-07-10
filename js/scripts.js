@@ -168,9 +168,9 @@ $(document).ready(function () {
         e.preventDefault();
 
         if (document.getElementById('name').value == '') {
-            $('#alert-wrapper').html(alert_markup('error', '<strong>Por favor, informe seu nome!</strong>'));
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu nome!</strong>'));
         } else if (document.getElementById('phone').value == '') {
-            $('#alert-wrapper').html(alert_markup('error', '<strong>Por favor, informe seu telefone celular.</strong>'));
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu telefone celular.</strong>'));
         } else {
             let data = $('#rsvp-form').serialize();
 
@@ -180,10 +180,8 @@ $(document).ready(function () {
             .done(function (data) {
                 $('#alert-wrapper').html('');
                 $('#rsvp-modal').modal('show');
-                console.log(data);
             })
             .fail(function (data) {
-                console.log(data);
                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Houve um problema, tente mais tarde.'));
             });
         }
@@ -193,9 +191,9 @@ $(document).ready(function () {
         e.preventDefault();
 
         if (document.getElementById('name').value == '') {
-            $('#alert-wrapper').html(alert_markup('error', '<strong>Por favor, informe seu nome!</strong>'));
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu nome!</strong>'));
         } else if (document.getElementById('phone').value == '') {
-            $('#alert-wrapper').html(alert_markup('error', '<strong>Por favor, informe seu telefone celular.</strong>'));
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu telefone celular.</strong>'));
         } else {
             let data = $('#rsvp-form').serialize();
 
@@ -205,10 +203,8 @@ $(document).ready(function () {
             .done(function (data) {
                 $('#alert-wrapper').html('');
                 $('#rsvp-modal').modal('show');
-                console.log(data);
             })
             .fail(function (data) {
-                console.log(data);
                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Houve um problema, tente mais tarde.'));
             });
         }
