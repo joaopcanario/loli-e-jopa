@@ -167,10 +167,13 @@ $(document).ready(function () {
     $('#rsvp-yes').click(function (e) {
         e.preventDefault();
 
-        if (document.getElementById('name').value == '') {
+        name = document.getElementById('name').value;
+        phone = document.getElementById('phone').value;
+
+        if (name == '') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu nome!</strong>'));
-        } else if (document.getElementById('phone').value == '') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu telefone celular.</strong>'));
+        } else if (isNaN(phone) || phone.length != 11) {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu telefone celular com DDD.</strong>'));
         } else {
             let data = $('#rsvp-form').serialize();
 
@@ -192,8 +195,6 @@ $(document).ready(function () {
 
         if (document.getElementById('name').value == '') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu nome!</strong>'));
-        } else if (document.getElementById('phone').value == '') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu telefone celular.</strong>'));
         } else {
             let data = $('#rsvp-form').serialize();
 
