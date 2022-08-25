@@ -83,21 +83,6 @@ $(document).ready(function () {
 
     });
 
-    /*********************** Ping ************************/
-
-    $(function () {
-        console.log("-> Ping!")
-
-        $.get('https://lolijopaapi.herokuapp.com/api/v1/debug/ping')
-        .done(function (data) {
-            console.log("->", data);
-        })
-        .fail(function (data) {
-            console.log("Ops, algo deu errado!");
-            console.log(data);
-        });
-    });
-
     /***************** Header BG Scroll ******************/
 
     $(function () {
@@ -166,49 +151,12 @@ $(document).ready(function () {
     /********************** RSVP **********************/
     $('#rsvp-yes').click(function (e) {
         e.preventDefault();
-
-        name = document.getElementById('name').value;
-        phone = document.getElementById('phone').value;
-
-        if (name == '') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu nome!</strong>'));
-        } else if (isNaN(phone) || phone.length != 11) {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu telefone celular com DDD.</strong>'));
-        } else {
-            let data = $('#rsvp-form').serialize();
-
-            $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Sua resposta esta sendo enviada.'));
-
-            $.post('https://lolijopaapi.herokuapp.com/api/v1/rsvp/yes', data)
-            .done(function (data) {
-                $('#alert-wrapper').html('');
-                $('#rsvp-modal').modal('show');
-            })
-            .fail(function (data) {
-                $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Houve um problema, tente mais tarde.'));
-            });
-        }
+        $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Essa funcionalidade não está mais disponível.'));
     });
 
     $('#rsvp-no').click(function (e) {
         e.preventDefault();
-
-        if (document.getElementById('name').value == '') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Por favor, informe seu nome!</strong>'));
-        } else {
-            let data = $('#rsvp-form').serialize();
-
-            $('#alert-wrapper').html(alert_markup('info', '<strong>Aguarde um pouco!</strong> Sua resposta esta sendo enviada.'));
-
-            $.post('https://lolijopaapi.herokuapp.com/api/v1/rsvp/no', data)
-            .done(function (data) {
-                $('#alert-wrapper').html('');
-                $('#rsvp-modal').modal('show');
-            })
-            .fail(function (data) {
-                $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Houve um problema, tente mais tarde.'));
-            });
-        }
+        $('#alert-wrapper').html(alert_markup('danger', '<strong>Ops!</strong> Essa funcionalidade não está mais disponível.'));
     });
 
     /********************** Change Background **********************/
